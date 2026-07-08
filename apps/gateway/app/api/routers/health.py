@@ -1,14 +1,15 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 
 from app.application.health.dto import HealthResponse
 from app.application.health.service import HealthService
+from app.dependencies.health import get_health_service
 
 router = APIRouter(prefix="/health", tags=["Health"])
 
-health_service = HealthService()
-
 
 @router.get("", response_model=HealthResponse)
-async def health() -> HealthResponse:
+async def health(
+    health_service: HealthService = Depends(get_health_service),
+) -> HealthResponse:
     """Health check endpoint."""
     return health_service.get_health()
