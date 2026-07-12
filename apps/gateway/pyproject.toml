@@ -10,6 +10,7 @@ dependencies = [
     "pydantic>=2.11.0",
     "pydantic-settings>=2.10.0",
     "structlog>=25.4.0",
+    "ngdep-common",
 ]
 
 [dependency-groups]
@@ -27,3 +28,6 @@ target-version = "py313"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+
+[tool.uv.sources]
+ngdep-common = { path = "../../packages/common", editable = true }
