@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     app_name: str = "NextGen Data Engineering Platform"
     app_version: str = "0.1.0"
     app_description: str = "Enterprise AI Platform for Data Engineers"
+    app_env: str = "development"
 
     api_prefix: str = "/api/v1"
 
