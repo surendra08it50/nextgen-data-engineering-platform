@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends
 from app.application.health.dto import HealthResponse
 from app.application.health.service import HealthService
 from app.dependencies.health import get_health_service
+
 from common.responses.base import ApiResponse
 
 router = APIRouter(prefix="/health", tags=["Health"])
