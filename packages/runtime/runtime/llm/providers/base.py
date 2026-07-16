@@ -3,8 +3,13 @@ from abc import ABC, abstractmethod
 from runtime.llm.models import LLMResponse
 
 
-class BaseLLM(ABC):
-    """Base interface for all LLM providers."""
+class BaseProvider(ABC):
+    """Base class for all LLM providers."""
+
+    @abstractmethod
+    def build(self):
+        """Return the provider-specific chat model."""
+        raise NotImplementedError
 
     @abstractmethod
     async def generate(
@@ -14,5 +19,5 @@ class BaseLLM(ABC):
         temperature: float = 0.0,
         max_tokens: int | None = None,
     ) -> LLMResponse:
-        """Generate a response from the language model."""
+        """Generate a response."""
         raise NotImplementedError
