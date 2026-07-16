@@ -18,6 +18,11 @@ class Settings(BaseSettings):
 
     api_prefix: str = "/api/v1"
 
+    active_provider: str = "groq"
+
+    groq_api_key: str = ""
+    groq_model: str = "llama-3.3-70b-versatile"
+
     # -------------------------------------------------------------------------
     # Database
     # -------------------------------------------------------------------------
