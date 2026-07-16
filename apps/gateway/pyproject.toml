@@ -3,7 +3,7 @@ name = "ngdep-gateway"
 version = "0.1.0"
 description = "NextGen Data Engineering Platform - API Gateway"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"
 dependencies = [
     "fastapi>=0.116.0",
     "uvicorn[standard]>=0.35.0",
@@ -11,6 +11,9 @@ dependencies = [
     "pydantic-settings>=2.10.0",
     "structlog>=25.4.0",
     "ngdep-common",
+    "sqlalchemy>=2.0.51",
+    "alembic>=1.18.5",
+    "psycopg[binary]>=3.3.4",
 ]
 
 [dependency-groups]
